@@ -1,92 +1,88 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
     font-family: 'Gilroy';
 }
 
-html,body{
-    width: 100%;
+html, body {
+    
     height: 100%;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+    overflow-y: auto;    /* Allow vertical scrolling */
 }
 
-#main{
-    height: 100%;
-    width: 100%;
+#main {
+    padding: 10px;
+    height: 100vh;
+    width: 100vw;
     background-color: #000000;
     color: aliceblue;
 }
 
-#main h1{
-    font-size: 150px;
+#main h1 {
+    font-size: 100px; /* Increased font size */
     text-transform: uppercase;
     font-weight: 300;
-    line-height: 120px;
-    /* background-color: aqua; */
+    line-height: 110px; /* Adjusted line-height */
     width: 80%;
     margin-left: 10%;
     position: relative;
     z-index: 9;
-
 }
 
-#main h1:nth-child(2){
-    margin-top: 200px;
+#main h1:nth-child(2) {
+    margin-top: 80px; /* Adjusted margin-top */
 }
-#main h1:nth-child(3){
+
+#main h1:nth-child(3), 
+#main h1:nth-child(4) {
     text-align: center;
 }
-#main h1:nth-child(4){
-    text-align: center;
-}
 
-
-
-
-.nav{
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    padding: 0px 20px;
+    height: 45px; /* Slightly increased height */
+    padding: 0px 15px; /* Slightly increased padding */
 }
 
-.nav-2{
+.nav-2 {
     display: flex;
-    gap: 70px;
+    gap: 60px; /* Slightly increased gap */
 }
 
-.nav h3{
-    font-size: 25px;
+.nav h3 {
+    font-size: 22px; /* Slightly increased font size */
     text-transform: uppercase;
     font-weight: 300;
 }
 
-img{
-    height: 400px;
+img {
+    height: 350px; /* Slightly increased image size */
     position: absolute;
     top: 15%;
     left: 40%;
-
 }
-#img1{
+
+#img1 {
     rotate: 20deg;
 }
-#img2{
+
+#img2 {
     rotate: 10deg;
 }
 
-.credit{
+.credit {
     margin-top: 4%;
     display: flex;
-    padding: 20px;
+    padding: 15px; /* Slightly increased padding */
     justify-content: space-around;
 }
 
-.credit h3{
-   
-        font-size: 25px;
-        text-transform: uppercase;
-        font-weight: 300;
-
+.credit h3 {
+    font-size: 22px; /* Slightly increased font size */
+    text-transform: uppercase;
+    font-weight: 300;
 }
