@@ -36,3 +36,4 @@ A simple web animation demo built using GSAP to animate text and images. View th
 Clone the repo and open `index.html` to run locally.
 
 # Changes performed!
+## useless thing???? wtf???!!
