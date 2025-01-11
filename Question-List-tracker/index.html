@@ -2,52 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeetCode Tracker</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>| Login & Registration</title>
 </head>
-
 <body>
-    <header>
-        <h1>LeetCode Tracker</h1>
-        <button id="theme-toggle" onclick="toggleTheme()"><i class="fas fa-adjust"></i> Toggle Dark Mode</button>
-    </header>
-
-    <main>
-        <div id="signup-form">
-            <h2>Create an Account</h2>
-            <input type="text" id="signup-username" placeholder="Username" required>
-            <input type="password" id="signup-password" placeholder="Password" required>
-            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
-            <button onclick="signUp()">Sign Up</button>
-            <p id="signup-error-msg" class="error-msg"></p>
-            <p>Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login</a></p>
-        </div>
-
-        <div id="login-form" style="display: none;">
-            <h2>Login</h2>
-            <input type="text" id="login-username" placeholder="Username" required>
-            <input type="password" id="login-password" placeholder="Password" required>
-            <button onclick="login()">Login</button>
-            <p id="login-error-msg" class="error-msg"></p>
-            <p>Don't have an account? <a href="javascript:void(0);" onclick="showSignUpForm()">Sign Up</a></p>
-        </div>
-
-        <div id="content" style="display: none;">
-            <h3>My Questions</h3>
-            <div class="add-question">
-                <input type="text" id="question-number" placeholder="Question Number" required>
-                <input type="text" id="question-name" placeholder="Question Name" required>
-                <input type="text" id="leetcode-link" placeholder="LeetCode Link (Optional)">
-                <button onclick="addQuestion()">Add Question</button>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>LEETCODE TRACKER</p>
             </div>
-            <input type="text" id="search" placeholder="Search Questions" oninput="searchQuestions()">
-            <div id="questions-list"></div>
-            <button onclick="logout()">Logout</button>
-        </div>
-    </main>
+        
+        </nav>
 
-    <script src="app.js"></script>
+
+
+        <div class="form-box">
+        
+            <!------------------- login form -------------------------->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    <header>Login</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username or Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Forgot password?</a></label>
+                    </div>
+                </div>
+            </div>
+            <!------------------- registration form -------------------------->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Terms & conditions</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+
+<script>
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+    
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+
+    document.querySelector("#login .submit").addEventListener("click", function () {
+        const username = document.querySelector("#login input[placeholder='Username or Email']").value;
+        const password = document.querySelector("#login input[placeholder='Password']").value;
+
+       
+        if (username && password) {
+            alert("Login successful! Welcome back!");
+        } else {
+            alert("Please enter valid credentials.");
+        }
+    });
+
+    
+    document.querySelector("#register .submit").addEventListener("click", function () {
+        const firstName = document.querySelector("#register input[placeholder='Firstname']").value;
+        const lastName = document.querySelector("#register input[placeholder='Lastname']").value;
+        const email = document.querySelector("#register input[placeholder='Email']").value;
+        const password = document.querySelector("#register input[placeholder='Password']").value;
+
+       
+        if (firstName && lastName && email && password) {
+            alert("Registration successful! Welcome " + firstName + "!");
+            login(); 
+        } else {
+            alert("Please fill out all fields to register.");
+        }
+    });
+</script>
+        
+    
+   
+
+</script>
+
 </body>
 </html>
