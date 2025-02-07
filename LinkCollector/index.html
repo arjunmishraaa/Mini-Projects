@@ -1,0 +1,31 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Important Links</h1>
+        
+        <!-- Button to open card input -->
+        <button id="addCardBtn" class="add-card-btn">+ Add New Card</button>
+
+        <!-- Form to add new card -->
+        <div id="addCardForm" class="add-card-form hidden">
+            <input type="text" id="cardName" placeholder="Card Name" required>
+            <input type="url" id="cardUrl" placeholder="Card URL" required>
+            <button id="saveCardBtn">Save Card</button>
+        </div>
+        
+        <!-- Cards container -->
+        <div id="cardContainer" class="card-container">
+            <!-- Cards will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
